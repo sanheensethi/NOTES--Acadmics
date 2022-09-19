@@ -198,7 +198,154 @@
     - Block Size : 64 Bits
     - Cipher Text : 64 bits
 
+# CryptAnalysis
 
+The process of attempting to discover the plaintext or the key or both is known as cryptanalysis.
+A cryptanalyst can do any or all these things:
+1. Attempt to break a single message
+2. Attempt to recognize patterns in encrypted messages,
+3. Attempt to deduce the key, in order to break subsequent messages easily
+4. Attempt to find weaknesses in the implementation or environment of use of encryption
+5. Attempt to find general weaknesses in an encryption algorithm, without
+necessarily having intercepted any messages
+
+
+# Vernam Cipher (One Time PAD)
+
+- Plain text to Cipher text
+![image](https://user-images.githubusercontent.com/35686407/191044401-fe280c78-94a3-466c-904c-55b5fb1a9741.png)
+
+- Assign Number to Ea h Alphabet (A : 0, B : 1 ... Z : 25)
+- in Hello, pick every alphabet, H ke corresponding key likh do
+- Key should be as complex as possible
+    - Rule: Plain text ki length hai, utni hi length ki key leni hai
+    - Key can be random.
+- Write key ke numbers also
+- Now, add both numbers respectively.
+- Then, Subtract , it means, observe these numbers, agar koi bhi addition , isme se > 26 hai, then us particular number ko hi 26 mae se subtract krna hai (x - 26).
+    - 34 > 26 , 34 - 26 = 8
+    - 35 > 26 , 35 - 26 = 9
+- Then write corresponding alphabets from numbers.
+- **Hr ek message ke liye new key generate krni pdegi**
+
+
+# Transpositions Cipher
+- Positions change kro alphabets ki,
+
+## Columnar Transpositions Cipher
+
+- Column ko importance mil rha hai
+![image](https://user-images.githubusercontent.com/35686407/191049776-fb2caa41-1083-4095-8c20-e51c8e28fe17.png)
+
+- Cols 5 lene hai.
+- Row wise insert kro
+- key ka column uthao, and write kro
+
+## Keyless Transposition Technique
+
+- write in zigzag manner
+![image](https://user-images.githubusercontent.com/35686407/191050835-bda3e7fd-953f-4891-97f3-c76e16729a60.png)
+- Write Cipher text row wise left to right
+
+# CryptoSystem
+
+- implementation of cryptographic techniques
+- to provide information security services.
+- cryptosystem is also referred to as a cipher system.
+![](https://www.tutorialspoint.com/cryptography/images/cryptosystem.jpg)
+
+## Components of a Cryptosystem
+- Plaintext
+- Encryption Algorithm.
+- Ciphertext
+- Decryption Algorithm
+- Encryption Key.
+- Decryption Key.
+
+## Types of Cryptosystems
+- Symmetric Key Encryption
+    - same keys are used for encrypting and decrypting
+- Asymmetric Key Encryption
+    - different keys are used for encrypting and decrypting the information
+
+# Symmetric Key CryptoGraphy
+
+- only 1 key is used, that key is called symmetric key
+- only that key is used in sender end and reciever end, therefore it is known as symmetric key cryptography
+- That key is known as secret key
+- Encryption process sender end pr ki jati hai
+- Decryption process receiver end pr preform ki jati hai
+![image](https://user-images.githubusercontent.com/35686407/191052088-a4ce60f7-8897-401b-a177-62d5f6b705ea.png)
+
+
+![](https://www.tutorialspoint.com/cryptography/images/symmetric_key_encryption.jpg)
+
+- Sender send krna chahta hai message receiver ko
+- So, tranmission mae attacker honge, jo message ko read kr lenge, then we use encryption algorithm
+- Output is encrypte message
+- Now, it sended to the receiver side,
+- and decryption is done in reciver side
+- Advantage: Complexity of implementation is less
+- Disadvantage: if attacker steal the key, and applied to the message, then the message will be read by attacker
+
+## Asymmetric Key
+
+-  Sender and Receiver ke paas public key honi chahiye,
+-  Online Repositery mae public key ho skti hai,
+-  Private key: Jisko share nhi kiya gya hai use private key kehte hai,
+-  dono ends ko private key ke bare mae kuch bhi nhi pta hai.
+-  Ab A nae Send krna hai B ko message, then A, B ke public key ko use krke send krega message B ko, then B use apni private key se decrypt krega and read krega message.
+
+![image](https://user-images.githubusercontent.com/35686407/191064328-0379e206-9e7f-44f5-b80b-383d4c965221.png)
+
+![](https://www.tutorialspoint.com/cryptography/images/asymmetric_key_encryption.jpg)
+
+# Deffie Hellman Algorithm of Key Exchange
+
+- Used in Symmetric key Cryptosystem
+    - Private key Encryption
+
+- Deffie Hellman, make the formula to exchange the keys
+- Take 2 numbers p and q
+- p is premitive and q is prime number
+- p^x mod q
+- e.g. p = 3 and q = 7
+- ![image](https://user-images.githubusercontent.com/35686407/191068469-746006f5-eb25-4f00-89fe-9f9ea7a3fae2.png)
+- values after mod shoud be different, should not be same
+- jiski value repeat na ho mod lene pr, vo primitive root hota hai, p ko esa choose kro ki uski powers ka mod agar lenge q se to vo repeat numbers produce nhi krega
+- Alice ke paas key 'a'
+- Bob ke paas key 'b'
+- A = p^a mod q
+- B = p^b mod q
+- A send msg to B
+- B send msg to A
+- Now Alice have message B, and Bob has message A
+- now alice and Bob find the private key
+- S = B^a mod q
+- S = A^b mod q
+- Now, S values are same, private key is exchanged bina kisi ko pta chle
+
+- Example:
+- q = 13, p = 6
+- Alice a = 3
+- Bob b = 10
+- A = 6^3 mod 13 = 8
+- B = 6^10 mod 13 = 4
+- now they excahnge 8 and 4
+- A = 4 and B = 8
+- S = B^a mod 13 = 8^3 mod 13 = 12
+- S = A^b mod 13 = 4^3 mod 13 = 12
+- Now, private key is 12,12
+- and publick= key are A = 8 and B = 4
+
+# Public Key Cryptography (Asymmetric key CryptoGraphy)
+
+![image](https://user-images.githubusercontent.com/35686407/191072521-575d8d4e-0d77-4167-8e07-9411a53fc29f.png)
+
+
+# Elgamal Algo (Asymmetric Key Cryptography)
+
+![image](https://user-images.githubusercontent.com/35686407/191072084-a2df7929-ebbf-4bf7-98bb-60503d3e214f.png)
 
 
 
