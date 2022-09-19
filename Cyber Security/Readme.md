@@ -19,6 +19,12 @@
     - then hardware,software,memory
     - maitain rehne chahiye, avaliable rehne chahiye to authorized user
 
+# Types of Threats
+
+![](https://static.javatpoint.com/tutorial/cybersecurity/images/what-is-cyber-security3.png)
+
+[Link](https://www.javatpoint.com/what-is-cyber-security)
+
 # Security Attacks
 
 1. Passive Attacks
