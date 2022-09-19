@@ -19,35 +19,6 @@
     - then hardware,software,memory
     - maitain rehne chahiye, avaliable rehne chahiye to authorized user
 
-# IS (Information Security)
-
-# Elements of IS
-
-1. Physical Elements:
-    - Guard (Like: Manual Checking Guard in Organization)
-    - Camera
-        - Insann so jata hai, to unauthorized bnde ko cctv camera dekhenge
-    - Rzone
-        - Restricted Zone Maintained, 
-        - insitute mae particular zone mae confidential information secure hoti hai
-        - restricted zone
-        - authorized access , high level ka bnda
-        - normal bnda nhi ja skta
-    - Downloading
-        - Downloading kuch bhi kr rhe hai altu faltu, uske upar bhi restrictions
-    - Access Rights
-        - koi ek bnda bndi kaam krti thi, he/she leaves, jitne bhi access rights jude the us bnde se with organization, sare vapis le liye jaye, revoke it cancel it, security issue na ho
-
-2. System Elements:
-    - Antivirus
-    - Malicious s/w detection solution
-    - Disable usb ports
-
-3. Process Elements:
-    - Authorized User/ Access Control
-    - S/W details
-    - log entry
-
 # Security Attacks
 
 1. Passive Attacks
