@@ -132,6 +132,8 @@
 
 # Playfair Cipher
 
+- Message : Jazz,
+- keyword : Monarchy
 - Create 5 x 5 cell
 - Insert Row Wise Left to right (Keyword)
 - jpo bhi alohabets keyword ke the jo cells mae daal diye hai, unko chord ke, jo 26 standard alphabets hai unme se keyword valo ko hta de, remaining alphabets ko unko cells mae bhrna hai
@@ -150,11 +152,51 @@
     - X ko lgane ke liye priority pehle vale E ko deni hai,
 - Example: OFF : (OF,FX)
 
+> Working:
 
+- Agar pair ke letters same column mae hai, then unalphabet ke immediate down vale alphabet ko likh denge unke corresponding
+- agar pair same row ko belong krte hai, we take right, if alhabet right is not there, we use cyclic order (wrap around)
+- Example: OFF (OF, FX)
+- Agar same column row mae nhi hai e.g. FX , then create a rectangle, then F and X are diagonal Cells, F and X ke corner opposite points - F ki row mae jo cell content sbse pehle aata hai, use likhna hai , then for F we write i or j anything
+- X ka row dekho, uska V aaya, 
+- (Clockwise)
 
+![image](https://user-images.githubusercontent.com/35686407/190849235-6d0acf54-7833-4b93-81b4-2f63938e339a.png)
 
+![image](https://user-images.githubusercontent.com/35686407/190849422-0b3ad71b-5b60-4bdf-bd23-cf8c890531fc.png)
 
+![image](https://user-images.githubusercontent.com/35686407/190849444-92676bb7-5944-4ec0-8f99-4bb5334434a2.png)
 
+# Stream Cipher
+
+- jb bhi keys/algo ko every bit of data bit pr apply krte hai, then it is stream cipher
+- Example: One Time PAD
+
+![image](https://user-images.githubusercontent.com/35686407/190849765-f7e815fd-0b97-488f-98ca-648796eab763.png)
+
+- Represent Message in terms of bits
+- Key Stream generator, generate key in terms of bits (k1 is first key of bit1, and k2 is second key of bit2)
+- XOR between them, we got C1,C2,...
+- We User Stream Cipher Technique/Algorithm
+- ek ek bit ko consider krke key apply kr rhe hai, and cipher text ki bit ko generate kr rhe ho
+- then send it to receiver side
+- receiver ke paas bhi key stream generator hota hai
+- vo uske sath XOR kr deta hai, then we got original message
+- EXAMPLE:
+    ![image](https://user-images.githubusercontent.com/35686407/190849892-98abd78c-7e6d-4250-80a6-5980d7ad9e01.png)
+- There is no error/noise in the message
+
+# Block Cipher
+
+- Plain text ko blocks mae divide kr dete hai of fixed size
+- Key apply krte hai each block mae
+- Cipher text can also be generated in format of blocks also if plain text is divided into blocks.
+- ![image](https://user-images.githubusercontent.com/35686407/190850027-9cb41832-fc70-4ceb-b105-258bbb9dd411.png)
+- Key Size: (40,56,64,128,256 Bits) Fixed Size
+- vo size ki key, hr ek block mae lgai jayegi
+- Example: DES (Data Encryption Standard)
+    - Block Size : 64 Bits
+    - Cipher Text : 64 bits
 
 
 
